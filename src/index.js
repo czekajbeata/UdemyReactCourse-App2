@@ -16,7 +16,7 @@ class App extends React.Component {
     );
   }
 
-  render() {
+  renderContent() {
     if (this.state.errorMessage && !this.state.latitude) {
       return <div>Error: {this.state.errorMessage}</div>;
     }
@@ -26,6 +26,10 @@ class App extends React.Component {
     }
 
     return <Loader message="Waiting for location request approval..." />;
+  }
+
+  render() {
+    return <div>{this.renderContent()}</div>;
   }
 }
 
